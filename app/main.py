@@ -9,10 +9,10 @@ def copy_file(files: str) -> None:
         return
     try:
         if command == "cp":
-            with (open(file_obj, "r") as file_obj,
-                  open(file_new, "a") as file_new):
-                for line in file_obj:
-                    file_new.write(line)
+            with (open(file_obj, "r") as f,
+                  open(file_new, "w") as f_cp):
+                for line in f:
+                    f_cp.write(line)
     except FileNotFoundError:
         return
     return
